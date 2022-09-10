@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /*Selector de Tipo
+            este selector permite aplicarle estilo a todas las etiquitas de una referencia en especifica
+            en un codigo Ej: a, p, h1, h2, etc...        
+        */
+
+        h1 {
+            color: aqua;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 30px;
+            text-align: center;
+            background-color: blue;
+            border-radius: 10px;
+        }
+
+        /*Selector de clase
+            este selector permite aplicarle estilo a todas las etiquitas que tengan esta clase definidad
+            dentro Ej:  <h1 class = selectores></h1>       
+        */
+
+        .selectores {
+            color: #fff0ff;
+            ;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 35px;
+        }
+
+        /*Selector de ID
+            este selector permite aplicarle estilo a la etiquita que tenga esta ID definidad
+            dentro Ej:  <p id="parrafo"></p>      
+        */
+
+        #parrafo {
+            text-align: center;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: black;
+        }
+
+        /*Selector de referencia
+            este selector permite aplicarle estilo a la etiquita que tenga la refernecia definidad
+            dentro Ej:  <li><a href="#">Tipo</a> </l   
+        */
+
+        a[href="#"] {
+            Color: blue;
+        }
+
+        /*Selector de universal
+            este selector permite aplicarle estilo a todas las etiquetas dentro del codigo   
+        */
+
+        * {
+            background-color: #fff0ff;
+        }
+
+        /*Selector descendiente
+            este selector permite aplicarle estilo a la etiquita que tenga las etiquetas hijas definidas
+             dentro de un padre
+            dentro Ej:  <div> Padre
+                            <p> Hija
+                                Quiero ser un fullStack Developer
+                            </p>
+                        </div> 
+        */
+
+        div p {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 15px;
+            margin-top: 10px;
+            color: #96E23A;
+        }
+
+        /*Selector Hijos directos
+            este selector permite aplicarle estilo a la etiquita que tenga la ruta que se describe en ella
+            dentro Ej:  <div> Nivel 1
+                            <p>
+                                Hola mi nombre es Daniel iriarte y me gusta programar
+                            </p>
+                            <div> Nivel 2
+                                <p> Nivel 3
+                                    Quiero ser un fullStack Developer
+                                </p>
+                            </div>
+                        </div>
+        */
+
+        div>div>p {
+            font-family: cursive;
+            color: #264BBF;
+        }
+
+        /*Selector adyacente
+            este selector permite aplicarle estilo a la etiquita que este al lado de la primera definida
+            ojo: solo aplica a la primera etiqueta
+            dentro Ej:  <div>
+                            <p>
+                                Quiero ser un fullStack Developer
+                            </p>
+                        </div>
+                        <section>
+                            para lograrlo debo ser muy aplicado y hacer varios proyectos
+                        </section>
+        */
+
+        div+section {
+            font-size: 30 px;
+            color: aqua;
+            background-color: black;
+            border-radius: 10px;
+        }
+
+        /*Selector hermano
+            este selector permite aplicarle estilo a las etiquitas que esten al lado de la primera definida
+            A diferencia del selector adyancente este aplico a ambos section
+            dentro Ej:  <div>
+                            <p>
+                                Quiero ser un fullStack Developer
+                            </p>
+                        </div>
+                        <section>
+                            para lograrlo debo ser muy aplicado y hacer varios proyectos
+                        </section>
+                        <section>
+                            Por lo cual empezare desde ya!!
+                         </section>
+        */
+
+        div~section {
+            text-align: center;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Mi Ejemplo de clase platzi</h1>
+    <h1 class=selectores>Clase de Selectores en plazi</h1>
+    <p id="parrafo">
+        En la Clase de los selectores existen los siguientes:
+    <ul>
+        <li><a href="#">Tipo</a> </li>
+        <li>clase</li>
+        <li>ID</li>
+        <li>Atributo</li>
+        <li>universales</li>
+    </ul>
+    </p>
+    <div>
+        <p>
+            Hola mi nombre es Daniel iriarte y me gusta programar
+        </p>
+        <div>
+            <p>
+                Quiero ser un fullStack Developer
+            </p>
+        </div>
+        <section>
+            para lograrlo debo ser muy aplicado y hacer varios proyectos
+        </section>
+        <section>
+            Por lo cual empezare desde ya!!
+        </section>
+    </div>
+</body>
+
+</html>
