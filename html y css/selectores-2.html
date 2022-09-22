@@ -17,12 +17,25 @@
             text-align: center;
         }
 
-        #hover :hover{
-            color:blue;
+        #hover :hover {
+            color: blue;
         }
-        #ntn-child :nth-child(2){
-            color:blueviolet;
+
+        #ntn-child :nth-child(2) {
+            color: blueviolet;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        #active :active {
+            color: lime
+        }
+
+        #focus :focus {
+            color: green;
+        }
+
+        #after ::after{
+            content: "→";
         }
         
     </style>
@@ -35,20 +48,38 @@
         que relacione, tienen varias eventos en los cuales podemos ver los siguientes:
     </p>
     <ul>
-        <li id ="active"><strong>:Active</strong> :<p></p></li>
-        <li id ="focus"><strong>:focus</strong> :<p></p></li>
-        <li id ="hover"><strong>:hover</strong> :<p> nos permite activar un cambio al pasar el mouse sobre la etiqueta asociada</p></li>
-        <li id="ntn-child"><strong>:ntn-child(n)</strong> :<p> nos permite activar un cambio al pasar el mouse sobre la etiqueta asociada</p></li>
+        <li id="active"><strong>:Active</strong> :<a href="#">La pseudo-clase (en-US) :active de CSS representa un
+                elemento (como un botón) que el usuario está activando. Cuando se usa un mouse, la "activación"
+                generalmente comienza cuando el usuario presiona el botón primario del mouse y termina cuando se suelta.
+                La pseudo-clase :active se usa comúnmente en los elementos <a> y <button>, pero también se puede usar en
+                        otros elementos.</a></li>
+        <li id="focus"><strong>:focus</strong> :<p>La pseudo-clase :focus CSS representa un elemento (como una entrada
+                de formulario) que ha recibido el foco. Generalmente se activa cuando el usuario hace clic, toca un
+                elemento o lo selecciona con la tecla "Tab" del teclado</p> <input class="focus"
+                value="Voy a ser de color verde cuando enfoque."><br>
+        </li>
+        <li id="hover"><strong>:hover</strong> :<p> nos permite activar un cambio al pasar el mouse sobre la etiqueta
+                asociada</p>
+        </li>
+        <li id="ntn-child"><strong>:ntn-child(n)</strong> :<p>La pseudo-clase :nth-child() de CSS coincide con uno o más
+                elementos en función de su posición entre un grupo de hermanos</p>
+        </li>
     </ul>
     <h1>PseudoElementos</h1>
     <p>Los Pseudo elementos nos perminten darle dinamismo a elementos especificos en etiquetas
         que relacione, tienen varias eventos en los cuales podemos ver los siguientes:
     </p>
     <ul>
-        <li id="after"><strong>::after</strong> :<p></p></li>
-        <li id="before"><strong>::before</strong> :<p></p></li>
-        <li id="firt-latter"><strong>::first-latter</strong> :<p></p></li>
-        <li id="placeholder"><strong>::placeholder</strong> :<p></p></li>
+        <li id="after"><strong>::after</strong> :<p>crea un pseudo-elemento que es el último hijo del elemento
+                seleccionado. Es comunmente usado para añadir contenido cosmético a un elemento con la propiedad
+                content.Es en linea (inline) de forma predeterminada.</p>
+        </li>
+        <li id="before"><strong>::before</strong> :<p></p>
+        </li>
+        <li id="firt-latter"><strong>::first-latter</strong> :<p></p>
+        </li>
+        <li id="placeholder"><strong>::placeholder</strong> :<p></p>
+        </li>
     </ul>
 </body>
 
