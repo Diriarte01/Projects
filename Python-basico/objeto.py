@@ -27,3 +27,9 @@ while count < 5:
     print('Ejecucion #:' + str(count+1))
     count += 1
 #while():
+
+my_list = [1,7,3,4,5,6]
+
+for i in my_list:
+    print(i)
+    #print(my_list[i])
