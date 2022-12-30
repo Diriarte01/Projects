@@ -33,3 +33,9 @@ my_list = [1,7,3,4,5,6]
 for i in my_list:
     print(i)
     #print(my_list[i])
+
+
+name = 'Mario Salvador'
+name = name.replace('Mario','Juan')
+print(name)
+print((8 / 2) + 4 * 8)
