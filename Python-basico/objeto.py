@@ -16,3 +16,14 @@ persona['lenguajes'].append('Java')
 del persona['apellidos']
 print(persona)
 persona['lenguajes'].append('Python')
+
+print(persona.items())
+print(persona.keys())
+
+#ciclos en python
+count = 0
+
+while count < 5:
+    print('Ejecucion #:' + str(count+1))
+    count += 1
+#while():
