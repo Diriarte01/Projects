@@ -1,0 +1,46 @@
+h1, p{
+    text-align: center;
+}
+
+#title{
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body{
+    background-color: #103480;
+}
+
+#description{
+    color: white;
+}
+
+#survey-form{
+    margin: 0 auto;
+    padding: auto;
+    width: 600px;
+    background-color: aliceblue;
+}
+
+label, input, select{
+    display: block;
+}
+
+input{
+    margin-left: 0px;
+    margin-top: 8px;
+    margin-bottom: 25px;
+}
+
+label{
+    margin-left: 10px;
+}
+
+select{
+    margin-left: 10px;
+    margin-top: 8px;
+}
+
+input, select{
+    width :500px ;
+}
