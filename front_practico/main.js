@@ -1,88 +1,119 @@
-const navEmail = document.querySelector('.navbar-email');
-const desktopMenu = document.querySelector('.desktop-menu');
-const navCart = document.querySelector('.navbar-shopping-cart');
-
+const menuEmail = document.querySelector('.navbar-email');
 const menuHamIcon = document.querySelector('.menu');
+const menuCarritoIcon = document.querySelector('.navbar-shopping-cart');
+const productDetailCloseIcon = document.querySelector('.product-detail-close')
+const desktopMenu = document.querySelector('.desktop-menu');
 const mobileMenu = document.querySelector('.mobile-menu');
-const shopping = document.querySelector('.product-detail');
-const cardContainer = document.querySelector('.cards-container');
+const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
+const productDetailContainer = document.querySelector('#productDetail');
+const cardsContainer = document.querySelector('.cards-container');
 
-navEmail.addEventListener('click', toggleDesktopMenu);
+menuEmail.addEventListener('click', toggleDesktopMenu);
 menuHamIcon.addEventListener('click', toggleMobileMenu);
-navCart.addEventListener('click', toggleProductDetail);
+menuCarritoIcon.addEventListener('click', toggleCarritoAside);
+productDetailCloseIcon.addEventListener('click', closeProductDetailAside);
 
-function toggleDesktopMenu(){
-    
-    if(!mobileMenu.classList.contains('inactive')){
-        mobileMenu.classList.add('inactive')
-    }
-    if(!shopping.classList.contains('inactive')){
-        shopping.classList.add('inactive')
-    }
-    desktopMenu.classList.toggle('inactive')
-    
+function toggleDesktopMenu() {
+  const isAsideClosed = shoppingCartContainer.classList.contains('inactive');
+
+  if (!isAsideClosed) {
+    shoppingCartContainer.classList.add('inactive');
+  }
+  
+  desktopMenu.classList.toggle('inactive');
 }
 
-function toggleMobileMenu(){
-    if(!desktopMenu.classList.contains('inactive')){
-        desktopMenu.classList.add('inactive')
-    }
-    if(!shopping.classList.contains('inactive')){
-        shopping.classList.add('inactive')
-    }
-    mobileMenu.classList.toggle('inactive')
+function toggleMobileMenu() {
+  const isAsideClosed = shoppingCartContainer.classList.contains('inactive');
+
+  if (!isAsideClosed) {
+    shoppingCartContainer.classList.add('inactive'); 
+  }
+
+  closeProductDetailAside();
+  
+  mobileMenu.classList.toggle('inactive');
 }
 
-function toggleProductDetail(){
-    if(!desktopMenu.classList.contains('inactive')){
-        desktopMenu.classList.add('inactive')
-    }
-    if(!mobileMenu.classList.contains('inactive')){
-        mobileMenu.classList.add('inactive')
-    }
-    shopping.classList.toggle('inactive')
+function toggleCarritoAside() {
+  const isMobileMenuClosed = mobileMenu.classList.contains('inactive');
+  
+  if (!isMobileMenuClosed) {
+    mobileMenu.classList.add('inactive');
+  }
+
+  const isProductDetailClosed = productDetailContainer.classList.contains('inactive');
+  
+  if (!isProductDetailClosed) {
+    productDetailContainer.classList.add('inactive'); 
+  }
+  
+  shoppingCartContainer.classList.toggle('inactive');
+}
+
+function openProductDetailAside() {
+  shoppingCartContainer.classList.add('inactive');
+  productDetailContainer.classList.remove('inactive');
+}
+
+function closeProductDetailAside() {
+  productDetailContainer.classList.add('inactive');
 }
 
 const productList = [];
+productList.push({
+  name: 'Bike',
+  price: 120,
+  image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+});
+productList.push({
+  name: 'Pantalla',
+  price: 220,
+  image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+});
+productList.push({
+  name: 'Compu',
+  price: 620,
+  image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+});
 
-productList.push({name:'Bike', price: 120, img:"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"})
-productList.push({name:'K1300S', price: 1200000, img:"https://t2.uc.ltmcdn.com/es/posts/9/0/7/como_comprar_una_moto_por_internet_28709_orig.jpg"})
-productList.push({name:'Thunder 1500', price: 110000, img:"https://auteco.vteximg.com.br/arquivos/ids/192170-599-599/motocicleta_electrica_starker_thunder_negro_azul_2020_foto1.jpg?v=637250545125930000"})
-
-
-function renderProduct(productList){
-    for( product of productList){
-        console.log(product)
-        const productCard = document.createElement('div');
-        productCard.classList.add('product-card');
-    
-        const img = document.createElement('img');
-        img.setAttribute('src', product.img);
-    
-        const productInf = document.createElement('div');
-        productInf.classList.add('product-info');
-    
-        const productInfDiv = document.createElement('div');
-        
-        const productPrice = document.createElement('p');
-        const productName = document.createElement('p');
-    
-        productName.innerText = product.name;
-        productPrice.innerText = '$' + parseFloat(product.price);
-    
-        const productFigure = document.createElement('figure');
-        const figureImg = document.createElement('img');
-        figureImg.setAttribute('src', "./icons/bt_add_to_cart.svg" );
-    
-        cardContainer.appendChild(productCard);
-        productCard.appendChild(img)
-        productCard.appendChild(productInf);
-        productInf.appendChild(productInfDiv);
-        productInfDiv.appendChild(productPrice);
-        productInfDiv.appendChild(productName);
-        productInf.appendChild(productFigure);
-        productFigure.appendChild(figureImg);
-    }
+function renderProducts(arr) {
+  for (product of arr) {
+    const productCard = document.createElement('div');
+    productCard.classList.add('product-card');
+  
+    // product= {name, price, image} -> product.image
+    const productImg = document.createElement('img');
+    productImg.setAttribute('src', product.image);
+    productImg.addEventListener('click', openProductDetailAside);
+  
+    const productInfo = document.createElement('div');
+    productInfo.classList.add('product-info');
+  
+    const productInfoDiv = document.createElement('div');
+  
+    const productPrice = document.createElement('p');
+    productPrice.innerText = '$' + product.price;
+    const productName = document.createElement('p');
+    productName.innerText = product.name;
+  
+    productInfoDiv.appendChild(productPrice);
+    productInfoDiv.appendChild(productName);
+  
+    const productInfoFigure = document.createElement('figure');
+    const productImgCart = document.createElement('img');
+    productImgCart.setAttribute('src', './icons/bt_add_to_cart.svg');
+  
+    productInfoFigure.appendChild(productImgCart);
+  
+    productInfo.appendChild(productInfoDiv);
+    productInfo.appendChild(productInfoFigure);
+  
+    productCard.appendChild(productImg);
+    productCard.appendChild(productInfo);
+  
+    cardsContainer.appendChild(productCard);
+  }
 }
 
-renderProduct(productList);
+renderProducts(productList);
