@@ -29,6 +29,7 @@ _ttd_log_
 mono_crash.*
 
 # Build results
+node_modules
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
