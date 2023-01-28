@@ -9,10 +9,11 @@
   "author": "Daniel iriarte",
   "license": "ISC",
   "dependencies": {
+    "date-fns": "^2.29.3",
     "express": "^4.18.2",
     "fetch": "^1.1.0",
+    "http-server": "^0.12.3",
     "node": "^19.4.0",
-    "node-fetch": "^3.3.0",
-    "http-server": "^0.12.3"
+    "node-fetch": "^3.3.0"
   }
 }
