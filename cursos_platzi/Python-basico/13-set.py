@@ -2,3 +2,12 @@
 
 planeta = {'martes', 'jupiter', 'venus', 'venus'}
 print()
+
+
+#hacer operaciones con conjuntos
+
+set_a = {'col','mex', 'bol'}
+set_b = {'pe', 'bol'}
+
+set_c = set_a.union(set_b)
+print(f'los elementos del conjunto son: {set_c}')
