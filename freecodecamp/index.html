@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Formulario de Inscripción</title>
+</head>
+<body>
+    <main class="container">
+        <h1 id="title">
+            Formulario de Inscripción Universitario
+        </h1>
+        <p id="description">
+            Rellana los datos para las inscripcion al programa
+        </p>
+        <form action="#" id="survey-form">
+            <label for="name" id="name-label">Nombre:
+                <input type="text" name="name" id="name" placeholder="Pepito Perez" required>
+            </label>
+            <label for="email" id="email-label">Email:
+                <input type="email" name="email" id="email" placeholder="pepitoperez@gamil.com" required>
+            </label>
+            <label for="number" id="number-label">Telefono:
+                <input type="number" name="age" id="number" min="18" max="70" placeholder="25">
+            </label>
+            <label for="programa" id="program-label">Programa:
+                <select id="dropdown">
+                    <option value=""></option>
+                    <option value="1">Tecnologo en Desarrollo de Software</option>
+                    <option value="2">Administración de Empresas</option>
+                </select>
+            </label>
+            <label for=""> Tipo de ingreso
+                <label for="new">Nuevo Ingreso</label><input type="radio" name="type" id="new" value="new">
+                <label for="re-entry"></label>Reingreso<input type="radio" name="type" id="re-entry" value="re-entry">
+                <label for="transfer"></label>Trasalado<input type="radio" name="type" id="transfer" value="transfer">
+            </label>
+            <label for=""> Terminos de Aceptacion
+                <label for="privacity">Politicas de Privacidad</label><input type="checkbox" value="privacity" name="type" id="privacity" required>
+                <label for="data">Tratamiento de Datos</label><input type="checkbox" name="type" value="data" id="data" required>
+            </label>
+            <textarea name="" id="" cols="30" rows="10">Comentarios</textarea>
+            <button type="submit" id="submit">Enviar</button>
+        </form>
+    </main>
+</body>
+</html>
