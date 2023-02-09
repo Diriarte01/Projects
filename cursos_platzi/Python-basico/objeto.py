@@ -7,35 +7,36 @@ persona = {
     'lenguajes':['python','Javascript']
 }
 
-print(persona)
+if __name__ == '__main__':
+    print(persona)
 
-persona['nombre'] = 'Daniel Jose'
-persona['edad'] = 30
-print(persona)
-persona['lenguajes'].append('Java')
-del persona['apellidos']
-print(persona)
-persona['lenguajes'].append('Python')
+    persona['nombre'] = 'Daniel Jose'
+    persona['edad'] = 30
+    print(persona)
+    persona['lenguajes'].append('Java')
+    del persona['apellidos']
+    print(persona)
+    persona['lenguajes'].append('Python')
 
-print(persona.items())
-print(persona.keys())
+    print(persona.items())
+    print(persona.keys())
 
-#ciclos en python
-count = 0
+    #ciclos en python
+    count = 0
 
-while count < 5:
-    print('Ejecucion #:' + str(count+1))
-    count += 1
-#while():
+    while count < 5:
+        print('Ejecucion #:' + str(count+1))
+        count += 1
+    #while():
 
-my_list = [1,7,3,4,5,6]
+    my_list = [1,7,3,4,5,6]
 
-for i in my_list:
-    print(i)
-    #print(my_list[i])
+    for i in my_list:
+        print(i)
+        #print(my_list[i])
 
 
-name = 'Mario Salvador'
-name = name.replace('Mario','Juan')
-print(name)
-print((8 / 2) + 4 * 8)
+    name = 'Mario Salvador'
+    name = name.replace('Mario','Juan')
+    print(name)
+    print((8 / 2) + 4 * 8)

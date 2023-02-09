@@ -24,6 +24,8 @@ people._nombre = 'Daniel Jose'
 people.__apellido = 'Iriarte Castillo'
 people.mostrar_detalle()
 
+print('persona',people)
+
 # Clase para generar los procesos basicos de la aritmetica
 
 class Areitmetica:
@@ -48,4 +50,26 @@ print(nums.sumar())
 print(nums.div())
 print(nums.mult())
 print(nums.rest())
+
+#getters y setters
+
+class Persona():
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age
+
+    @property  
+    def nombre(self):
+        return self.__name
+    
+    @property
+    def age(self):
+        return self.__age
+
+    @nombre.setter
+    def nombre(self, nombre):
+        self.__name = nombre
+
+daniel = Persona('Daniel Iriarte', 25)
+print (daniel.age)
 
